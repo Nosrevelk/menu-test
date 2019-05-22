@@ -1,0 +1,148 @@
+<html>
+<head>
+  <title>Nav 2</title>
+  <style>
+
+    #skipnav a {
+	  font-family: monospace;
+      position: absolute;
+      clip: rect(0 0 0 0);
+      border: 0;
+      height: 1px; margin: -1px;
+      overflow: hidden;
+      padding: 0
+      width: 1px;
+      white-space: nowrap;
+      z-index: 5; 
+    }
+    #skipnav a:focus {
+      clip:auto;
+      left:0;
+      top:0;
+      width: fit-content;
+      height:auto;
+      margin:0;
+      padding:10px 5px;
+      background:#fdf6e7;
+      border:2px solid black;
+      border-left:none;
+      border-right:none;
+      text-align:center;
+      font-weight:bold;
+      color:black;
+    }
+
+
+	a {
+	  text-decoration: none;
+	}
+
+	nav {
+		font-family: monospace;
+	}
+
+	ul {
+	  background: darkorange;
+		list-style: none;
+		margin: 0;
+		padding-left: 0;
+	}
+
+	li,
+	.orange {
+		color: #fff;
+	  	background: darkorange;
+		display: block;
+		float: left;
+		padding: 1rem;
+		position: relative;
+		text-decoration: none;
+	  	transition-duration: 0.5s;
+	}
+	  
+	li a {
+	  color: #fff;
+	}
+
+	li:hover,
+	li:focus-within,
+	.orange:hover,
+	.orange:focus-within {
+		background: red;
+		cursor: pointer;
+	}
+
+	li:focus-within a,
+	.orange:focus-within a {
+	  outline: none;
+	}
+
+	ul li div {
+	
+	visibility: hidden;
+	opacity: 0;
+	min-width: 5rem;
+	position: absolute;
+	transition: all 0.5s ease;
+	margin-top: 1rem;
+	left: 0;
+	display: none;
+	}
+
+	ul li:hover > div,
+	ul li:focus-within > div,
+	ul li div:hover,
+	ul li div:focus {
+	   visibility: visible;
+	   opacity: 1;
+	   display: block;
+	}
+
+	ul li ul div {
+		clear: both;
+	  width: 100%;
+	}
+
+  </style>
+</head>
+<body>
+<div id="skipnav"><a href="#mainContent">Skip navigation</a></div>	
+
+<nav>
+  <ul role="menu">
+    <li><a href="#" data-level="1" role="menuitem">First</a></li>
+
+    <li><a href="#" data-level="1" role="menuitem" aria-haspopup="true">Second</a>
+      <div class="dropdown">
+        <a href="#" data-level="2" class="orange">Sub-1</a>
+        <a href="#" data-level="2" class="orange">Sub-2</a>
+        <a href="#" data-level="2" class="orange">Sub-3</a>
+      </div>
+    </li>
+
+    <li><a href="#" data-level="1" role="menuitem">Third</a></li>
+
+    <li><a href="#" data-level="1" role="menuitem" aria-haspopup="true">Fourth</a>
+      <div class="dropdown">
+        <a href="#" data-level="2" class="orange">Sub-1</a>
+        <a href="#" data-level="2" class="orange">Sub-2</a>
+        <a href="#" data-level="2" class="orange">Sub-3</a>
+        <a href="#" data-level="2" class="orange">Sub-4</a>
+        <a href="#" data-level="2" class="orange">Sub-5</a>
+      </div>
+    </li>
+
+    <li><a href="#" data-level="1" role="menuitem">Fifth</a></li>
+
+  </ul>
+</nav>
+
+<br /><br /><br />
+  <main id="mainContent" tabindex="-1">
+      <h3>Link will take users to this location.</h3>
+      <!-- other content in the main content -->
+  </main>
+
+
+</body>
+</html>
